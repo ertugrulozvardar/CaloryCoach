@@ -150,7 +150,16 @@ function exportToCsv(){
         link.click();
 }
 
-
+$('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+$(window).on('load', function(){
+    
+    setTimeout(removeLoader, 2000); 
+});
+function deleteLoaderMark(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      $( "#loadingDiv" ).remove(); 
+  });  
+}
 
 
 function clearAll(){
